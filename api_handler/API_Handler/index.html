@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>API HANDLER</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/dataTables.bootstrap4.css'>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<div class="container">
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#auth_tab">AUTHENTICATE</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#get_tab">GET</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#post_tab">POST</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#put_tab">PUT</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#delete_tab">DELETE</a>
+			</li>
+		</ul>
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div id="auth_tab" class="container tab-pane active"><br>
+				<div class="input-group mb-3">
+					<div class="col">
+						<input type="text" id="username" class="form-control form-control-lg" placeholder="Username" aria-label="First name">
+					</div>
+					<div class="col">
+						<input type="text" id="password" class="form-control form-control-lg" placeholder="Password" aria-label="Last name">
+					</div>
+					<div class="col">
+						<input type="button" class="form-control form-control-lg btn btn-primary" id="auth" value="AUTH"/>
+					</div>
+				</div>
+				<input type="text" id="auth_url" class="form-control" aria-label="auth_url_label" placeholder="Auth URL">
+				<span id="auth_key"></span>
+			</div>
+
+			<div id="get_tab" class="container tab-pane fade"><br>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="get_url_label">URL</span>
+					<input type="text" id="get_url" class="form-control" aria-label="get_url_label">
+					<input type="button" class="btn btn-success" id="get" value="GET"/>
+				</div>
+			</div>
+
+			<div id="post_tab" class="container tab-pane fade"><br>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="post_url_label">URL</span>
+					<input type="text" id="post_url" class="form-control" aria-label="post_url_label">
+					<input type="button" class="btn btn-warning" id="post" value="POST"/>
+				</div>
+				<div class="input-group">
+					<div class="input-group">
+						<span class="input-group-text">post request body</span>
+						<code>
+							<textarea id="post_body" class="form-control txtarea" aria-label="Post request body"></textarea>
+						</code>					
+					</div>
+				</div>
+			</div>
+
+			<div id="put_tab" class="container tab-pane fade"><br>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="put_url_label">URL</span>
+					<input type="text" id="put_url" class="form-control" aria-label="put_url_label">
+					<input type="button" class="btn btn-info" id="put" value="PUT"/>
+				</div>
+				<div class="input-group">
+					<div class="input-group">
+						<span class="input-group-text">Put request body</span>
+						<code>
+							<textarea id="put_body" class="form-control txtarea" aria-label="Put request body"></textarea>
+						</code>
+					</div>
+				</div>
+			</div>
+
+			<div id="delete_tab" class="container tab-pane fade"><br>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="delete_url_label">URL</span>
+					<input type="text" id="delete_url" class="form-control" aria-label="delete_url_label">
+					<input type="button" class="btn btn-danger" id="delete" value="DELETE"/>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+	<div class="req">
+		<div class="mb-3">
+			<code>
+				<textarea class="form-control" id="text" rows="50"></textarea>
+			</code>
+		</div>
+	</div>
+
+	<!-- partial -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.js'></script>
+	<script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/dataTables.bootstrap4.js'></script>
+	<script src="./api.js"></script>
+	<script src="./script.js"></script>
+	<!-- <script src="./index.js"></script> -->
+</body>
+</html>
